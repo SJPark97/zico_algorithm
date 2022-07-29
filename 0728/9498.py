@@ -9,3 +9,5 @@ elif result >= 60:
     print('D')
 else:
     print('F')
+
+# print("FFFFFFDCBAA"[int(input())//10])
