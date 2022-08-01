@@ -5,5 +5,4 @@ def new(a, b):
 
 
 A, B = map(int, input().split())
-new(A, B)
 print(new(A, B))

@@ -1,10 +1,14 @@
 S = input()
 alph = [-1] * 26
 
-for alphbet in range(len(S)):
-    if alph[ord(S[alphbet]) - 97] != -1:
+for number in range(len(S)):
+    if alph[ord(S[number]) - 97] != -1:
         continue
     else:
-        alph[ord(S[alphbet]) - 97] = alphbet
+        alph[ord(S[number]) - 97] = number
 
 print(*alph)
+
+# str_inp = input()
+# for i in range(26):
+#     print(str_inp.find(chr(i + 97)), end=' ')

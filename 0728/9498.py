@@ -10,4 +10,4 @@ elif result >= 60:
 else:
     print('F')
 
-# print("FFFFFFDCBAA"[int(input())//10])
+print("FFFFFFDCBAA"[int(input())//10])
