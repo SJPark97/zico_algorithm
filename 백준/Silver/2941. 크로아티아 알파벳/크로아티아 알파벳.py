@@ -1,7 +1,7 @@
-checking_alph = input()
-alph = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
-count = len(checking_alph)
-for alph_check in alph:
-    count -= checking_alph.count(alph_check)
+word = input()
+croatian_alph = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+count = len(word)
+for check in croatian_alph:
+    count -= word.count(check)
 
 print(count)
