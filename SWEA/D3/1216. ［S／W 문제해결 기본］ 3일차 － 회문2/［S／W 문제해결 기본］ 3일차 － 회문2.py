@@ -1,5 +1,5 @@
 def circular(string_list):
-    for M in range(100, 2, -1):
+    for M in range(100, 0, -1):
         for i in range(100):
             for j in range(100-M+1):
                 find = True
