@@ -1,15 +1,15 @@
+import sys
 
-N, K = map(int, input().split())
+N, K = map(int, sys.stdin.readline().split())
 
-num_list = list(map(int, input().split()))
+num_list = list(map(int, sys.stdin.readline().split()))
+num_sum = sum(num_list[:K])
 
-highest_sum = 0
-for i in range(len(num_list)-K+1):
-    list_sum = 0
-    for j in range(K):
-        list_sum += num_list[i+j]
-    if highest_sum < list_sum:
-        highest_sum = list_sum
+highest_sum = num_sum
+for i in range(len(num_list)-K):
+    num_sum = num_sum - num_list[i] + num_list[i+K]
+    if highest_sum < num_sum:
+        highest_sum = num_sum
 
 print(highest_sum)
 
