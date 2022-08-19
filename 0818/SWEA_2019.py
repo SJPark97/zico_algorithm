@@ -4,7 +4,7 @@
 
 def square(n):
     if n:
-        square_list.append(square(n-1)*2)
+        square_list.append(square(n - 1) * 2)
     return square_list[n]
 
 
