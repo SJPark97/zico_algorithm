@@ -1,8 +1,7 @@
 def board_check(arr, x, y):
-    global result
     if len(arr) == 6:
-        if arr not in result:
-            result.append(arr.copy())
+        if tuple(arr) not in result:
+            result.add(tuple(arr.copy()))
         return
     for n in range(4):
         nx, ny = x + dx[n], y + dy[n]
@@ -15,11 +14,10 @@ def board_check(arr, x, y):
 board = [list(map(int, input().split())) for _ in range(5)]
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
-result = []
+result = set()
 
 for i in range(5):
     for j in range(5):
         board_check([], i, j)
 
 print(len(result))
-
