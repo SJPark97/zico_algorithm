@@ -4,12 +4,10 @@ def pascal(n):
     else:
         pascal(n - 1)
         for i in range(n):
-            try:
-                pascal_list[n-1].append(pascal_list[n-2][i-1]+pascal_list[n-2][i])
-            except:
+            if i == n - 1:
                 pascal_list[n-1].append(1)
-
-
+            else:
+                pascal_list[n-1].append(pascal_list[n-2][i]+pascal_list[n-2][i+1])
 
 
 T = int(input())
