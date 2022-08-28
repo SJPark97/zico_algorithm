@@ -1,6 +1,6 @@
 def init():
     N = int(input())
-    num_list = list(map(int, input().split()))
+    num_list = sorted(list(map(int, input().split())))
     return N, num_list
 
 
@@ -14,12 +14,13 @@ def chk(s):
 def sol():
     answer = -1
     n, num_list1 = init()
-    for num in range(n-1):
-        for num1 in range(num+1, n):
+    for num in range(n-1, -1, -1):
+        for num1 in range(num-1, -1, -1):
             number = num_list1[num] * num_list1[num1]
+            if answer > number :
+                break
             if chk(str(number)):
-                if answer < number:
-                    answer = number
+                answer = number
     return print(answer)
 
 
