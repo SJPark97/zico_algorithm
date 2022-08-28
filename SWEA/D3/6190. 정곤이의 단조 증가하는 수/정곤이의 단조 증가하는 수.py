@@ -5,9 +5,14 @@ def init():
 
 
 def chk(s):
-    for n in range(len(s)-1):
-        if s[n] > s[n+1]:
+    num = s % 10
+    s //= 10
+    while s:
+        n = s % 10
+        if num < n:
             return False
+        num = n
+        s //= 10
     return True
 
 
@@ -17,9 +22,9 @@ def sol():
     for num in range(n-1, -1, -1):
         for num1 in range(num-1, -1, -1):
             number = num_list1[num] * num_list1[num1]
-            if answer > number :
+            if answer > number:
                 break
-            if chk(str(number)):
+            if chk(number):
                 answer = number
     return print(answer)
 
