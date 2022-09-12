@@ -1,15 +1,13 @@
 def sol():
     N = int(input())
     chk = set()
-    answer = 1
-    while True:
+    answer = 0
+    while len(chk) < 10:
+        answer += 1
         n = N * answer
         while n > 0:
             chk.add(n%10)
             n = n // 10
-        if len(chk) == 10:
-            break
-        answer += 1
     print(N * answer)
     return
 
