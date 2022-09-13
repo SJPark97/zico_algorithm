@@ -5,7 +5,6 @@ def solution(board, moves):
 
     for move in moves:
         for i in range(length):
-
             if board[i][move-1] != 0:
                 if queue and queue[-1] == board[i][move-1]:
                     queue.pop()
@@ -16,3 +15,4 @@ def solution(board, moves):
                 break
 
     return answer
+

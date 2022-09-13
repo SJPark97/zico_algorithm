@@ -11,8 +11,7 @@ def sol():
     for i in range(N):
         print(*sec_list[i], sep='', end=' ')
         print(*thd_list[i], sep='', end=' ')
-        print(*final_list[i], sep='', end=' ')
-        print()
+        print(*final_list[i], sep='')
     return
 
 
