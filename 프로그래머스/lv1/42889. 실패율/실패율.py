@@ -1,7 +1,6 @@
 def solution(N, stages):
-    result = []
+    result = list(range(N, 0, -1))
     answer = []
-    chk = set(stages)
     stages = sorted(stages)[::-1]
     people = 0
     n = N
@@ -19,10 +18,8 @@ def solution(N, stages):
         if cnt != 0:
             answer.append((n, cnt/people))
     answer.sort(key=lambda x: x[1], reverse=False)
-    for ans in range(len(answer)-1, -1, -1):
-        result.append(answer[ans][0])
-        chk.add(answer[ans][0])
-    for i in range(1, N + 1):
-        if i not in chk:
-            result.append(i)
-    return result
+    for ans in answer:
+        i = ans[0]
+        del result[result.index(i)]
+        result.append(i)
+    return result[::-1]
