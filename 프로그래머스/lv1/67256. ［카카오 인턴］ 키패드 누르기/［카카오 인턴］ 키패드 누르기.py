@@ -1,7 +1,7 @@
 def solution(numbers, hand):
     l = (1, 4, 7, '*')
-    r = (3, 6, 9, '#')
     c = (2, 5, 8, 0)
+    r = (3, 6, 9, '#')
     l_position = (1, 3)
     r_position = (3, 3)
     answer = ''
@@ -11,7 +11,7 @@ def solution(numbers, hand):
             l_position = (1, l.index(num))
         elif num in r:
             answer += 'R'
-            r_position = (1, r.index(num))
+            r_position = (3, r.index(num))
         else:
             c_position = (2, c.index(num))
             l_d = abs(l_position[0] - c_position[0]) + abs(l_position[1] - c_position[1])
