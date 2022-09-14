@@ -9,13 +9,10 @@ for _ in range(int(input())):
         num = num - 1
         switch[num] = abs(switch[num]-1)
         for j in range(1, n//2):
-            if num - j < 0 or num + j >= n:
+            if num - j < 0 or num + j >= n or switch[num-j] != switch[num+j]:
                 break
-            elif switch[num-j] == switch[num+j]:
-                switch[num-j] = abs(switch[num-j]-1)
-                switch[num+j] = abs(switch[num+j] - 1)
-            else:
-                break
+            switch[num-j] = abs(switch[num-j]-1)
+            switch[num+j] = abs(switch[num+j] - 1)
 for l in range(0, len(switch), 20):
     p_switch = switch[l:l+20]
     print(*p_switch)
