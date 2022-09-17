@@ -80,7 +80,7 @@ for test_case in range(1, int(input()) + 1):
                 chk_direction.append(ck)
     answer = []
     answer_core = 0
-    answer_line = n ** 2
+    answer_line = n**2
     line = 0
     dfs(0, 0)
     print(answer_line)
