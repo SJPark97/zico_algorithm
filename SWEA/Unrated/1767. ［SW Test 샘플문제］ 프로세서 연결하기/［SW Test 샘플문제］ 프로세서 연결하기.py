@@ -1,17 +1,8 @@
 def chk(x, y):
     result = []
     for d in range(4):
-        nx, ny = x + dx[d], y + dy[d]
-        while True:
-            if 0 <= nx < n and 0 <= ny < n:
-                if board[nx][ny] == 0:
-                    nx += dx[d]
-                    ny += dy[d]
-                else:
-                    break
-            elif nx in success or ny in success:
-                result.append(d)
-                break
+        if chk_true(x, y, d):
+            result.append(d)
     return result
 
 
