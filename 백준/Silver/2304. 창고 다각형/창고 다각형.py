@@ -1,3 +1,15 @@
+def chk(board_1):
+    start = board_1[0]  # (15, 8)
+    result = 0
+    for i in range(1, d):
+        if board_1[i][1] > start[1]:
+            result += abs(board_1[i][0] - start[0]) * (max_location - start[1])
+            if board_1[i][1] == max_location:
+                break
+            start = board_1[i]
+    return result
+
+
 d = int(input())
 board = []
 max_location = 0
@@ -8,19 +20,5 @@ for _ in range(d):
     board.append((l, h))
 board.sort(key=lambda x: (x[0], x[1]))
 answer = (board[-1][0] - board[0][0] + 1) * max_location
-start = board[0]# (2, 4)
-end = board[-1]# (15, 8)
-for i in range(1, d):
-    if board[i][1] > start[1]:
-        answer -= (board[i][0] - start[0]) * (max_location - start[1])
-        if board[i][1] == max_location:
-            break
-        start = board[i]
-
-for i in range(d-2, -1, -1):
-    if board[i][1] > end[1]:
-        answer -= (end[0] - board[i][0]) * (max_location - end[1])
-        if board[i][1] == max_location:
-            break
-        end = board[i]
+answer -= chk(board) + chk(board[::-1])
 print(answer)
