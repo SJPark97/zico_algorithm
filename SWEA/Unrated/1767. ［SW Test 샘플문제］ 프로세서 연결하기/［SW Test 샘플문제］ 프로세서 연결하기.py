@@ -12,9 +12,13 @@ def chk_true(x, y, d):
 # 코어 dfs
 def dfs(t, c):
     global line, answer_line, answer_core
+    # break_option으로 가지치기를 하였다.
+    if break_option and max(break_option) > c:
+        return
     # t가 리스트의 길이 즉 모든 코어를 다 돌았을때 값 저장
     if t == len(chk_list):
         if answer_core < c or answer_core == c and answer_line > line:
+            break_option.append(c)
             answer_core = c
             answer_line = line
     else:
@@ -33,7 +37,7 @@ def dfs(t, c):
                     else:
                         break
                 # 연결된 코어 개수 + 1 후 다음 dfs
-                dfs(t + 1, c + 1)
+                dfs(t + 1, c)
                 nx, ny = x, y
                 # dfs가 끝나고 색칠했던 부분 원상복구
                 while True:
@@ -46,7 +50,7 @@ def dfs(t, c):
                         break
         # 해당 코어가 다른 코어들의 전선에 가로막혀 진행하지 못 하면
         # 연결된 코어 개수를 증가시키지 않고 다음 dfs
-        dfs(t + 1, c)
+        dfs(t + 1, c - 1)
 
 
 dx = [-1, 1, 0, 0]
@@ -65,5 +69,6 @@ for test_case in range(1, int(input()) + 1):
     answer_core = 0
     answer_line = n ** 2
     line = 0
-    dfs(0, 0)
+    break_option = []
+    dfs(0, len(chk_list))
     print(answer_line)
