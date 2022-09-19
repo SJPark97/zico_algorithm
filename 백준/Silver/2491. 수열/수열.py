@@ -19,6 +19,5 @@ for i in range(n - 1):
     else:
         up += 1
         down += 1
-        up_down_list.extend([up, down])
 up_down_list.extend([up, down])
 print(max(up_down_list))
