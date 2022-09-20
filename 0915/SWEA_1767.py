@@ -72,7 +72,6 @@ for test_case in range(1, int(input()) + 1):
         for j in range(1, n - 1):
             if board[i][j] == 1:
                 chk_list.append((i, j))
-    answer = []
     answer_core = 0
     answer_line = n**2
     line = 0

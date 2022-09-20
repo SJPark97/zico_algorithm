@@ -15,7 +15,7 @@ for i in range(n - 1):
             down = 1
     elif nums[i] > nums[i + 1]:
         down += 1
-        if up > 1 :
+        if up > 1:
             up_down_list.append(up)
             up = 1
     else:
