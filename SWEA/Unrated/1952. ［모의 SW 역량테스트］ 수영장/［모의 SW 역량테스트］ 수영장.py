@@ -12,7 +12,7 @@ def dfs(t, result):
 for test_case in range(1, int(input()) + 1):
     print(f'#{test_case}', end=' ')
     d, m, m_3, y = map(int, input().split())
-    plan = list(map(int, input().split())) + [0, 0]
+    plan = list(map(int, input().split()))
     answer = y
     for i in range(12):
         if plan[i] > 0:
