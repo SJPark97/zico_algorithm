@@ -1,11 +1,9 @@
-import copy
-
 def move(x, y, h):
     visit[x][y] = True
     global long_way, flag
     road.append(road_map[x][y])
-    if len(long_way) < len(road):
-        long_way = copy.deepcopy(road)
+    if long_way < len(road):
+        long_way = len(road)
     for n in range(4):
         mx = x + dx[n]
         my = y + dy[n]
@@ -36,12 +34,11 @@ for test_case in range(1, T+1):
         if higest_h < max(chk):
             higest_h = max(chk)
 
-    long_way = []
+    long_way = 0
     for i in range(N):
         for j in range(N):
             if road_map[i][j] == higest_h:
                 flag = True
                 road = []
                 move(i, j, higest_h)
-    print(len(long_way))
-    
+    print(long_way)
