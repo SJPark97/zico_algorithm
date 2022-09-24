@@ -7,9 +7,13 @@ def chk(nums):
 
 n = int(input())
 answer = []
-for num in range(n+1):
-    chk_nums = chk([n, num])
-    if len(answer) < len(chk_nums):
-        answer = chk_nums[:]
-print(len(answer))
-print(*answer)
+if n == 1:
+    print(4)
+    print(*[1, 1, 0, 1])
+else:
+    for num in range(int(n * 0.61), int(n * 0.7) + 1):
+        chk_nums = chk([n, num])
+        if len(answer) < len(chk_nums):
+            answer = chk_nums[:]
+    print(len(answer))
+    print(*answer)
