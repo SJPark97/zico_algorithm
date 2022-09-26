@@ -6,11 +6,7 @@ def turn(number, direction):
 
 
 def chk_turn_dfs(location, direction, way):
-    if location in break_option:
-        return
-    if direction == -1 and board[location][2] == board[location + 1][-2]:
-        return
-    if direction == 1 and board[location][-2] == board[location - 1][2]:
+    if location in break_option or board[location][-2 * direction] == board[location - direction][2 * direction]:
         return
     chk_turn_dfs(location + direction, direction, -way)
     turn(location, way)
