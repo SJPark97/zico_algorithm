@@ -1,6 +1,8 @@
 def sol():
     def dfs(x, y):
         chk.add((x, y))
+        if len(chk) >= answer[0]:
+            return
         for n in range(3):
             nx, ny = x + dx[n], y + dy[n]
             if 0 <= nx < 100 and 0 <= ny < 100 and board[nx][ny] == 1 and (nx, ny) not in chk:
