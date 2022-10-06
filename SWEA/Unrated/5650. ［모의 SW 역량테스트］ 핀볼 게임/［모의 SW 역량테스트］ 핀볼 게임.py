@@ -4,7 +4,7 @@ def sol():
         nx, ny = x, y
         while True:
             nx, ny = nx + dx[direction], ny + dy[direction]
-            if nx in (-1, n) or ny in (-1, n) or board[nx][ny] == 5:
+            if nx in {-1, n} or ny in {-1, n} or board[nx][ny] == 5:
                 return cnt * 2 + 1
 
             if (nx, ny) == (i, j) or board[nx][ny] == -1:
