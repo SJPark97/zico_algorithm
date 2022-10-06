@@ -4,15 +4,13 @@ def sol():
         nx, ny = x, y
         while True:
             nx, ny = nx + dx[direction], ny + dy[direction]
-            if nx in (-1, n) or ny in (-1, n):
-                direction = block[4][direction]
-                cnt += 1
-                continue
+            if nx in (-1, n) or ny in (-1, n) or board[nx][ny] == 5:
+                return cnt * 2 + 1
 
             if (nx, ny) == (i, j) or board[nx][ny] == -1:
                 return cnt
 
-            if 1 <= board[nx][ny] <= 5:
+            if 1 <= board[nx][ny] < 5:
                 cnt += 1
                 direction = block[board[nx][ny] - 1][direction]
             elif 6 <= board[nx][ny] <= 10:
@@ -22,7 +20,7 @@ def sol():
     # 0 1 2 3
     dx = [-1, 1, 0, 0]
     dy = [0, 0, -1, 1]
-    block = [(1, 3, 0, 2), (3, 0, 1, 2), (2, 0, 3, 1), (1, 2, 3, 0), (1, 0, 3, 2)]
+    block = [(1, 3, 0, 2), (3, 0, 1, 2), (2, 0, 3, 1), (1, 2, 3, 0)]
     for tc in range(1, int(input()) + 1):
         n = int(input())
         board = [list(map(int, input().split())) for _ in range(n)]
