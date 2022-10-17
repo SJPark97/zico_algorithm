@@ -1,6 +1,3 @@
-import copy
-
-
 def sol():
     def clean(block_board):
         for d in range(w):
@@ -50,8 +47,7 @@ def sol():
                 answer = cnt
             return
         for i in range(w):
-            bk = copy.deepcopy(block_board)
-            choice(chk(bk, i), t + 1)
+            choice(chk([row[:] for row in block_board], i), t + 1)
 
     dx = [-1, 1, 0, 0]
     dy = [0, 0, -1, 1]
