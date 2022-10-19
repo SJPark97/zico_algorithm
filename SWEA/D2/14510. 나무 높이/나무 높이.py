@@ -14,10 +14,7 @@ def sol():
         elif cnt1 == cnt2:
             answer = cnt1 * 2
         else:
-            while cnt1 < cnt2:
-                cnt2 -= 1
-                cnt1 += 2
-            answer = cnt1 + cnt2
+            answer = cnt1 + cnt2 + (cnt2-cnt1+2)//3
         print('#{} {}'.format(tc, answer))
 
 
